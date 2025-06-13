@@ -7,6 +7,11 @@ sudo apt update -y
 echo "🐍 Installing Python..."
 sudo apt install python3 -y
 
+echo "⬇️ Installing Node.js and npm..."
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+
+echo ""
 echo "✅ Installed Versions:"
 
 echo ""
@@ -19,18 +24,9 @@ python3 --version || echo "Python not found"
 
 echo ""
 echo "🟢 Node.js version:"
-if command -v node > /dev/null 2>&1; then
-  node -v
-else
-  echo "Node.js is NOT installed"
-fi
+node -v || echo "Node.js not found"
 
 echo ""
 echo "📦 npm version:"
-if command -v npm > /dev/null 2>&1; then
-  npm -v
-else
-  echo "npm is NOT installed"
-fi
-
+npm -v || echo "npm not found"
 
