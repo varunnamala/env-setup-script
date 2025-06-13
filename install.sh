@@ -13,5 +13,6 @@ sudo apt install nodejs npm -y
 echo "✅ Installed Versions:"
 echo -n "Java: " && java -version | head -n 1
 echo -n "Python: " && python3 --version
-echo -n "Node.js: " && nodejs --version
+echo -n "Node.js: " && node --version
 echo -n "npm: " && npm --version
+
