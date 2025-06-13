@@ -7,9 +7,9 @@ sudo apt update -y
 echo "🐍 Installing Python..."
 sudo apt install python3 -y
 
-echo ""
 echo "✅ Installed Versions:"
 
+echo ""
 echo "☕ Java version:"
 java -version || echo "Java not found"
 
@@ -19,10 +19,18 @@ python3 --version || echo "Python not found"
 
 echo ""
 echo "🟢 Node.js version:"
-node --version || echo "Node.js not found"
+if command -v node > /dev/null 2>&1; then
+  node -v
+else
+  echo "Node.js is NOT installed"
+fi
 
 echo ""
 echo "📦 npm version:"
-npm --version || echo "npm not found"
+if command -v npm > /dev/null 2>&1; then
+  npm -v
+else
+  echo "npm is NOT installed"
+fi
 
 
